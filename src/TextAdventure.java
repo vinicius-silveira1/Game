@@ -12,7 +12,7 @@ public class TextAdventure {
         // player variables
         int health = 100;
         int attack = 30;
-        int shield = 20;
+        int shield = 30;
         int score = 0;
         
         
@@ -21,7 +21,7 @@ public class TextAdventure {
         String[] enemies = { "Wolf", "Zombie", "Thief", "Skeleton", "Witch" };
 
         int enemyMaxHealth = 100;
-        int enemyAttack = 25;
+        int enemyAttack = 20;
 
         // welcome
         System.out.println("Hello warrior, what's your name?");
@@ -70,6 +70,7 @@ public class TextAdventure {
                     if (damageTaken < 0) {
                         damageTaken = 0;
                     }
+                    health -= damageTaken;
 
                     System.out.println("\t>The " + enemy + " hits you, but, as you raised your shield, you prevented " 
                     + damagePrevented + " damage and took only " + damageTaken);
