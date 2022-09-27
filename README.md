@@ -8,6 +8,6 @@ Text based adventure game that runs in the terminal. The first versions contains
 
 Java
 
-## :men: Author
+## :man: Author
 
 Vinícius Silvera

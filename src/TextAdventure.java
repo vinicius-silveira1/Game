@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class App {
+public class TextAdventure {
     public static void main(String[] args) throws Exception {
 
         Scanner in = new Scanner(System.in);
