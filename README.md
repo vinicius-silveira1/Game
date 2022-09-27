@@ -1,18 +1,13 @@
-## Getting Started
+# :video_game: Text Adventure
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## :clipboard: Description
 
-## Folder Structure
+Text based adventure game that runs in the terminal. The first versions contains just simple combat features, like attack, raise shield and run. The plan is to continue improving this game as my coding skills grow!
 
-The workspace contains two folders by default, where:
+## :bulb: Technology
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Java
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## :men: Author
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Vinícius Silvera
