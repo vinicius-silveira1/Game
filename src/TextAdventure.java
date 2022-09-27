@@ -13,7 +13,7 @@ public class TextAdventure {
         int health = 100;
         int attack = 30;
         int shield = 30;
-        int criticalChance = 50; // per cent
+        int criticalChance = 35; // per cent
         int score = 0;
 
         
