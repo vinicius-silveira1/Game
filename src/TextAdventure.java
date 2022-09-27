@@ -20,7 +20,7 @@ public class TextAdventure {
         
         // enemy variables
 
-        String[] enemies = { "Wolf", "Zombie", "Thief", "Skeleton", "Witch" };
+        String[] enemies = { "Wolf", "Spider", "Ghost", "Skeleton", "Witch" };
 
         int enemyMaxHealth = 100;
         int enemyAttack = 20;
@@ -37,7 +37,7 @@ public class TextAdventure {
             int enemyHealth = rand.nextInt(enemyMaxHealth);
             String enemy = enemies[rand.nextInt(enemies.length)];
 
-            System.out.println("You enter a dark room and feel a cold wind in your back...");
+            System.out.println("You enter a dark cave and feel a cold chill...");
             System.out.println("\n\n\t# A " + enemy + " has appeared! #\n");
 
             while(enemyHealth > 0) {
@@ -83,7 +83,7 @@ public class TextAdventure {
                     health -= damageTaken;
 
                     System.out.println("\t>The " + enemy + " hits you, but, as you raised your shield, you prevented " 
-                    + damagePrevented + " damage and took only " + damageTaken);
+                    + damagePrevented + " damage and took only " + damageTaken + ". That was close!");
 
                     if (health <= 0) {
                         System.out.println("\tYou too hurt to continue... better look for a healer.");
@@ -96,29 +96,29 @@ public class TextAdventure {
                     continue GAME; 
 
                 } else  {
-                    System.out.println("Please type a number between 1 and 3.");
+                    System.out.println("Invalid answer.");
                     
                 }               
             }
             if (health <= 0) {
-                System.out.println("\tYou're too weak too fight and leave the dungeon defeated.. more luck next time.");
+                System.out.println("\tYou're too weak too fight and leave the dungeon defeated... more luck next time.");
                 break;
             }
 
             System.out.println("\n-----------------------------------------------------------------");
-            System.out.println(" # " + enemy + " was defeated! Nice! # ");
+            System.out.println("\n # " + enemy + " was defeated! Nice! # ");
             System.out.println(" # You have " + health + " HP left. #");
             score++;
             
             System.out.println("\n-----------------------------------------------------------------");
-            System.out.println("What you gonna do now?");
-            System.out.println("1. Continue adventure");
+            System.out.println("What would you like to do now?");
+            System.out.println("1. Continue adventure!");
             System.out.println("2. Exit dungeon.");
 
             String input = in.nextLine();
 
             while(!input.equals("1") && !input.equals("2")) {
-                System.out.println("Please, choose option 1 or 2.");
+                System.out.println("Invalid answer.");
                 input = in.nextLine();
             }
             
