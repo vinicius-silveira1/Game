@@ -22,7 +22,15 @@ public class App {
         int enemyMaxHealth = 100;
         int enemyAttackDamage = 25;
 
-        
+        // welcome
+        System.out.println("Hello, what's your name?");
+        String name = in.nextLine();
+        System.out.println("Welcomo to the dungeon, " + name + "!");
+        System.out.println("\nBut be careful...some people say that terrible creatures live ahead...");
+        System.out.println("-----------------------------------------------------------------");    
+
+
+
 
 
 
