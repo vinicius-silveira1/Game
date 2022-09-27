@@ -13,7 +13,9 @@ public class TextAdventure {
         int health = 100;
         int attack = 30;
         int shield = 30;
+        int criticalChance = 50; // per cent
         int score = 0;
+
         
         
         // enemy variables
@@ -28,7 +30,7 @@ public class TextAdventure {
         String name = in.nextLine();
         System.out.println("\nWelcome to the dungeon, " + name + "!");
         System.out.println("\nBut be careful...some people say that terrible creatures live ahead...");
-        System.out.println("-----------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------");
         
         GAME: 
         while(gameIsRunning) {
@@ -51,12 +53,20 @@ public class TextAdventure {
                 if (input.equals("1")) {
                     int damageDealt = rand.nextInt(attack);
                     int damageTaken = rand.nextInt(enemyAttack);
+                    int criticalDamage = damageDealt * 2;
+                    
+                    if (rand.nextInt(100) <= criticalChance) {
+                        health -= damageTaken;
+                        enemyHealth -= criticalDamage;
+                        System.out.println("\t>You hit the " + enemy + " for a powerful *" + criticalDamage + "* critical damage!");
+                        System.out.println("\t>The " + enemy + " strikes you back for " + damageTaken + ". Ouch!");
+                    } else {
 
                     health -= damageTaken;
                     enemyHealth -= damageDealt;
-
                     System.out.println("\t>You hit the " + enemy + " for " + damageDealt + " damage.");
-                    System.out.println("\t>The " + enemy + " strikes you back for " + damageTaken + ".");
+                    System.out.println("\t>The " + enemy + " strikes you back for " + damageTaken + ". Ouch!");
+                    }
 
                     if (health <= 0) {
                         System.out.println("\tYou too hurt to continue... better look for a healer.");
