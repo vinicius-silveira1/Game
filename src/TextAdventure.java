@@ -14,6 +14,9 @@ public class TextAdventure {
         int attack = 30;
         int shield = 30;
         int criticalChance = 35; // per cent
+        int healthPots = 3;
+        int healthPotHeal = 25;
+        int healthPotDropChance = 50; // per cent
         int score = 0;
 
         
@@ -46,7 +49,8 @@ public class TextAdventure {
                 System.out.println("\n\tWhat would you like to do?");
                 System.out.println("\t1. Attack");
                 System.out.println("\t2. Raise shield");
-                System.out.println("\t3. Run!");
+                System.out.println("\t3. Drink health pot");
+                System.out.println("\t4. Run!");
 
                 String input = in.nextLine();
 
@@ -90,13 +94,23 @@ public class TextAdventure {
                         break;
                     }
 
-
                 } else if (input.equals("3")) {
-                    System.out.println("You ran away from the " + enemy + "!");
-                    continue GAME; 
+                    if (healthPots > 0) {
+                    health += healthPotHeal;
+                    healthPots--; 
+                    System.out.println("\t>You drank a health pot and healed " 
+                    + healthPotHeal + " life. Now you got " + healthPots + " health pots left.");
+                    } else if (healthPots <= 0) {
+                        healthPots = 0;
+                        System.out.println("\tYou ran out of health pots. Defeat enemies to have a chance of getting more.");
+                        }
+                        
+                } else if (input.equals("4")) {
+                    System.out.println("\tYou ran away from the " + enemy + "!");
+                    continue GAME;
 
                 } else  {
-                    System.out.println("Invalid answer.");
+                    System.out.println("\tInvalid answer.");
                     
                 }               
             }
@@ -107,7 +121,12 @@ public class TextAdventure {
 
             System.out.println("\n-----------------------------------------------------------------");
             System.out.println("\n # " + enemy + " was defeated! Nice! # ");
+            if (rand.nextInt(100) <= healthPotDropChance) {
+              healthPots++;
+              System.out.println(" # Wow!!! The " + enemy + " dropped a health pot! Now you got " + healthPots + " health pots.");  
+            }
             System.out.println(" # You have " + health + " HP left. #");
+            
             score++;
             
             System.out.println("\n-----------------------------------------------------------------");
