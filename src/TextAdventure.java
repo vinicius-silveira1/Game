@@ -16,7 +16,7 @@ public class TextAdventure {
         int criticalChance = 35; // per cent
         int healthPots = 3;
         int healthPotHeal = 25;
-        int healthPotDropChance = 50; // per cent
+        int healthPotDropChance = 45; // per cent
         int score = 0;
 
         
